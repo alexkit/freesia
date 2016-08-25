@@ -1,0 +1,15 @@
+[
+  {
+    "scenarioID" : "1",
+    "stepID" : "Scenario_1_Step_1",
+    "scenarioDescription": "Harry Potter",
+    "rules" : [
+      {
+        "xpath": "//title/text()='Harry Potter'"
+      },
+      {
+        "xpath": "//title/text()='John Lennon'"
+      }
+    ]
+  }
+]

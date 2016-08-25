@@ -1,0 +1,20 @@
+{
+  "name": "freesia",
+  "version": "0.0.1",
+  "description": "nbn Industry Interface Service Emulator",
+  "main": "main.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Lloyd Richardson",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2",
+    "xmldom": "0.1.22",
+    "xpath": "0.0.23"
+  }
+}

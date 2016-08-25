@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+@operation queryAddress
+@action queryAddressSearch
+@sender Access Seeker
+@receiver NBN Co
+@scenario Address query using NBN Physical Address with Complex Address as the search criteria
+@name Normal - Complex address location
+@description This is a sample queryAddress request message containing NBN Physical Address with Complex Address (complexRoadNumber1, complexRoadNumber2, complexRoadName, complexRoadTypeCode, complexRoadSuffixCode) as the search criteria
+@version V1.0
+-->
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"  
+                  xmlns:mhe="http://www.nbnco.com.au/cim/common/messageHeader/v3" 
+                  xmlns:dns="http://www.nbnco.com.au/cim/manageAddress/v3" 
+                  xmlns:pla="http://www.nbnco.com.au/cim/common/place/v3" 
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<soapenv:Header>
+		<mhe:MessageHeader>
+			<activityName>queryAddress</activityName>
+			<msgName>ManageAddressqueryAddressRequest</msgName>		
+			<businessServiceName>ManageAddress</businessServiceName>
+			<businessServiceVersion>V1.0</businessServiceVersion>
+			<msgType>Request</msgType>
+			<accessSeekerID>ASI556656475867</accessSeekerID>
+			<correlationId>4eef4405-606e-46db-8c5c-af78e2874077</correlationId>
+			<security>Placeholder Security</security>
+			<priority>4</priority>
+			<communicationPattern>RequestReply</communicationPattern>
+			<timestamp>2011-06-23T12:00:00Z</timestamp>
+			<businessChannel>B2B</businessChannel>
+			<HeaderCharacteristicValue>
+				<value>TRUE</value>
+				<Characteristic>
+					<name>Mocked</name>
+				</Characteristic>
+			</HeaderCharacteristicValue>
+			<HeaderCharacteristicValue>
+				<value>50</value>
+				<Characteristic>
+					<name>QueryLimit</name>
+				</Characteristic>
+			</HeaderCharacteristicValue>							
+		</mhe:MessageHeader>
+	</soapenv:Header>
+	<soapenv:Body>
+		<dns:ManageAddressRequest>
+			<!-- *********************************************************************     -->
+			<!-- Address input details.                                                    -->
+			<!-- *********************************************************************     -->
+			<!-- The input to an Address Search can be one of the following:               -->
+			<!-- 1. NBNLocation ID, or                                                     -->			
+			<!-- 1. Physical Address or   -->
+			<!-- 2. GNAF ID, or                                                            -->
+			<!-- 3. Geocode                                                                -->
+			<AddressSearch>
+				<type>NBNPhysicalAddress</type>				
+				<!-- ================================================== -->
+				<!-- Example Physical Address                        -->
+				<!-- ================================================== -->
+				<BusinessInteractionLocation>
+					<Place xsi:type="pla:NBNLocation">
+						<PhysicalAddress>
+				            <secondaryComplexName>Biology Building B</secondaryComplexName>						
+							<complexRoadNumber1>20</complexRoadNumber1>
+							<complexRoadNumber2>24</complexRoadNumber2>
+							<complexRoadName>Genetics</complexRoadName>
+							<complexRoadTypeCode>LANE</complexRoadTypeCode>
+							<complexRoadSuffixCode>N</complexRoadSuffixCode>							
+							<addressSiteName>University of Melbourne</addressSiteName>
+							<roadNumber1>12</roadNumber1>
+							<!-- This is mandatory -->					
+							<roadName>Swanston</roadName>							
+							<roadTypeCode>ST</roadTypeCode>
+							<roadSuffixCode>N</roadSuffixCode>
+							<!-- This is mandatory -->	
+							<localityName>Carlton</localityName>
+							<postcode>3000</postcode>
+							<stateTerritoryCode>VIC</stateTerritoryCode>
+						</PhysicalAddress>
+					</Place>
+				</BusinessInteractionLocation>
+			</AddressSearch>
+		</dns:ManageAddressRequest>
+	</soapenv:Body>
+</soapenv:Envelope>
