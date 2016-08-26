@@ -1,0 +1,71 @@
+{
+  "scenarios": [
+    {
+      "scenarioID": "00001",
+      "businessService": "Manage Address",
+      "scenarioDescription": "queryAddress by Location ID",
+      "hasSteps": [
+        {
+          "stepReference": "Manage_Address_queryAddress_request_001"
+        },
+        {
+          "stepReference": "Manage_Address_queryAddress_response_001"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "stepID": "Manage_Address_queryAddress_request_001",
+      "stepType": "input",
+      "nextStepID": "Manage_Address_queryAddress_response_001"
+    },
+    {
+      "stepID": "Manage_Address_queryAddress_response_001",
+      "stepType": "output",
+      "outputTemplate": "./resouces/templates/ManageAddressResponse.ejs",
+      "errorTemplates": [
+        {
+          "errorCode": "00001",
+          "errorTemplate": "./resouces/templates/ValidationException.ejs"
+        }
+      ]
+    }
+  ],
+  "matcherRules": [
+    {
+      "stepID": "Manage_Address_queryAddress_request_001",
+      "rules": [
+        {
+          "xpath": "//title",
+          "contains": "H"
+        },
+        {
+          "xpath": "//title",
+          "contains": "Harry"
+        },
+        {
+          "xpath": "//title",
+          "contains": "Potter"
+        }
+      ]
+    },
+    {
+      "stepID": "Manage_Address_queryAddress_request_002",
+      "rules": [
+        {
+          "xpath": "//title",
+          "contains": "H"
+        },
+        {
+          "xpath": "//title",
+          "contains": "Harry"
+        },
+        {
+          "xpath": "//title",
+          "contains": "Potter"
+        }
+      ]
+    }
+  ]
+}
