@@ -37,8 +37,12 @@
       "stepID": "Manage_Address_queryAddress_request_001",
       "rules": [
         {
-          "xpath": "//title",
-          "contains": "H"
+          "xpath": "//AddressSearch/BusinessInteractionLocation/Place/PhysicalAddress/roadNumber1",
+          "contains": "12"
+        },
+        {
+          "xpath": "//AddressSearch/BusinessInteractionLocation/Place/PhysicalAddress/roadName",
+          "contains": "Swan"
         }
       ]
     }
